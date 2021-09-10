@@ -1,4 +1,3 @@
-import './Header.scss'
 import { Icon, Input } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
@@ -28,31 +27,54 @@ function Header() {
                     <Input icon={{ name: 'search', circular: true, link: true }} placeholder='Type anything...' fluid/>
                 </div>
                 <div className="header__container-action">
-                    <Icon name="shopping cart"/>
+                    <ul>
+                        <li><Icon name="shopping cart"/></li>
+                        <li><Icon name="heart"/></li>
+                        <li><Icon name="user"/></li>
+                    </ul>
                 </div>
             </div>
             <div className="header__menu">
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li>
-                            <Link to="/categories">Categories</Link>
-                            <ul>
-                                <li><Link to="/woman">Woman</Link></li>
-                                <li><Link to="/man">Man</Link></li>
-                                <li><Link to="/kid">Kid</Link></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <Link to="/products">Products</Link>
-                            <ul>
-                                <li><Link to="/woman">Woman</Link></li>
-                                <li><Link to="/man">Man</Link></li>
-                                <li><Link to="/kid">Kid</Link></li>
-                            </ul>
-                        </li>
-                        <li><Link to="/about">About Us</Link></li>
-                    </ul>
-                </div>
+                <ul>
+                    <li><Link to="/">Trang chủ</Link></li>
+                    <li>
+                        <Link to="/categories">Hoa sự kiện</Link>
+                        <ul>
+                            <li><Link to="/woman">Hoa cưới</Link></li>
+                            <li><Link to="/man">Hoa tặng 14-02</Link></li>
+                            <li><Link to="/kid">Các dịp lễ</Link></li>
+                            <li><Link to="/kid">Các dịp lễ</Link></li>
+                            <li><Link to="/kid">Các dịp lễ</Link></li>
+                            <li><Link to="/kid">Các dịp lễ</Link></li>
+                        </ul>
+                    </li>  
+                    <li>
+                        <Link to="/categories">Hoa sự kiện</Link>
+                        <ul>
+                            <li><Link to="/woman">Hoa cưới</Link></li>
+                            <li><Link to="/man">Hoa tặng 14-02</Link></li>
+                            <li><Link to="/kid">Các dịp lễ</Link></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <Link to="/categories">Hoa sự kiện</Link>
+                        <ul>
+                            <li><Link to="/woman">Hoa cưới</Link></li>
+                            <li><Link to="/man">Hoa tặng 14-02</Link></li>
+                            <li><Link to="/kid">Các dịp lễ</Link></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <Link to="/categories">Hoa sự kiện</Link>
+                        <ul>
+                            <li><Link to="/woman">Hoa cưới</Link></li>
+                            <li><Link to="/man">Hoa tặng 14-02</Link></li>
+                            <li><Link to="/kid">Các dịp lễ</Link></li>
+                        </ul>
+                    </li>                   
+                    <li><Link to="/about">About Us</Link></li>
+                </ul>
+            </div>
         </header>
     )
 }

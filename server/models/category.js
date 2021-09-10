@@ -5,6 +5,10 @@ const categorySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  url: {
+    type: String,
+    required: true,
+  }
 });
 
 const Category = mongoose.model("category", categorySchema);
