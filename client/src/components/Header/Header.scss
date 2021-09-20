@@ -39,9 +39,9 @@
     justify-content: space-between;
     align-items: center;
     &-logo {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       img {
         border-radius: 50%;
         width: 150px;
@@ -49,8 +49,8 @@
       }
     }
     &-contact {
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
       .phone {
         position: relative;
         background: $primary-color;
@@ -59,22 +59,22 @@
         border-radius: 10px;
         color: #fff;
         p {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
         }
       }
       a {
-          line-height: 40px;
-          padding: 0 10px;
-          font-size: 1.2rem;
-          font-weight: bold;
-          letter-spacing: 1px;
-          color: $font-secondary;
-          &:hover {
-            color: $primary-color;
-          }
+        line-height: 40px;
+        padding: 0 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: $font-secondary;
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
     &-action {
@@ -91,90 +91,90 @@
     border-top: 1px solid $border-color;
     background: #fff;
     > ul {
-        display: flex;
-        justify-content: center;
-        padding: 0;
-        text-transform: uppercase;
-        box-sizing: border-box;
-        > li {
-          font-weight: bold;
-          display: inline-block;
-          padding: 0 15px;
-          position: relative;
-          .drop-menu {
-            background: #fff;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 250px;
-            z-index: 2;
-            box-sizing: border-box;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-            position: absolute;
-            padding-left: 20px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            opacity: 0;
-            visibility: hidden;
-            transform-origin: 0 0 0;
-            transform: scaleY(0);
-            transition: $baseTransition;
-                li {
-                    padding: 10px 15px;
-                    &:hover {
-                        a {
-                        color: $primary-color;
-                        }
-                    }
-                }
-                > li {
-                    &:not(:last-child) {
-                        padding-bottom: 10px;
-                    }
-                }
-                a {
-                    font-size: 14px;
-                    &:hover {
-                        padding-left: 5px;
-                    }
-                }
-            }
-            a {
-                color: #4c4c4c;
-            }
-            > a {
-              line-height: 50px;
-              display: flex;
-              align-items: center;
-              font-size: 14px;
-              text-transform: uppercase;
-              position: relative;
-              &:before {
-                  transition: $baseTransition;
-                  background-color: $primary-color;
-                  position: absolute;
-                  content: '';
-                  width: 0;
-                  height: 1px;
-                  bottom: 0;
-                  left: 0;
-              }
-          }
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      > li {
+        font-weight: bold;
+        display: inline-block;
+        padding: 0 15px;
+        position: relative;
+        .drop-menu {
+          background: #fff;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 275px;
+          z-index: 2;
+          box-sizing: border-box;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+          position: absolute;
+          padding-left: 20px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          opacity: 0;
+          visibility: hidden;
+          transform-origin: 0 0 0;
+          transform: scaleY(0);
+          transition: $baseTransition;
+          li {
+            padding: 10px 15px;
             &:hover {
-                > a {
-                    color: $primary-color;
-                    &:before {
-                        width: 100%;
-                    }
-                }
-                .drop-menu {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: scaleY(1);
-                }
+              a {
+                color: $primary-color;
+              }
             }
           }
+          > li {
+            &:not(:last-child) {
+              padding-bottom: 10px;
+            }
+          }
+          a {
+            font-size: 14px;
+            &:hover {
+              padding-left: 5px;
+            }
+          }
+        }
+        a {
+          color: #4c4c4c;
+        }
+        > a {
+          line-height: 50px;
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          text-transform: uppercase;
+          position: relative;
+          &:before {
+            transition: $baseTransition;
+            background-color: $primary-color;
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+          }
+        }
+        &:hover {
+          > a {
+            color: $primary-color;
+            &:before {
+              width: 100%;
+            }
+          }
+          .drop-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: scaleY(1);
+          }
+        }
       }
+    }
   }
 }
 @media (max-width: 480px) {

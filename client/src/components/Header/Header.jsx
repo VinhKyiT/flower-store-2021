@@ -3,19 +3,21 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo_vkit_half.png'
 import { FaRegHeart, FaRegUser, FaPhoneAlt } from 'react-icons/fa';
 import { CgShoppingCart } from 'react-icons/cg';
-import axios from "axios";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllCategories } from '../../app/actions/categoryActions';
+import { getAllCategoryDetails } from '../../app/actions/categoryDetailActions';
 
 function Header() {
+    const dispatch = useDispatch();
 
-    const getAllCategories = async () => {
-        const { data } = await axios.get("/api/category");
-        return data;
-    }
-
+    const { list } = useSelector(state => state.categories);
+    const { categoryDetails, loading, error } = useSelector(state => state.categoryDetails);
+    
     useEffect(() => {
-        getAllCategories();
-    }, [])
+        dispatch(getAllCategories());
+        dispatch(getAllCategoryDetails());
+    }, [dispatch])
 
     return (
         <header className="header">
@@ -55,7 +57,7 @@ function Header() {
             <div className="header__menu">
                 <ul>
                     <li><Link to="/">Trang chủ</Link></li>
-                    <li>
+                    {/* <li>
                         <Link to="/categories">Hoa sự kiện</Link>
                         <ul className="drop-menu">
                             <li><Link to="/woman">Hoa cưới</Link></li>
@@ -89,7 +91,24 @@ function Header() {
                             <li><Link to="/man">Hoa tặng 14-02</Link></li>
                             <li><Link to="/kid">Các dịp lễ</Link></li>
                         </ul>
-                    </li>
+                    </li> */}
+                    {loading ? <div>Loading...</div>
+                    : error ? <div>{error}</div>
+                    : list.map(category => (
+                        <li key={category._id}>
+                            <Link to={`/category/${category.url}`}>{category.name}</Link>
+                            <ul className="drop-menu">
+                                {categoryDetails.map(categoryDetail => {
+                                    if(categoryDetail.categoryId === category._id) {
+                                        return (
+                                            <li key={categoryDetail._id}><Link to={`/category/${category.url}/${categoryDetail.url}`}>{categoryDetail.name}</Link></li>
+                                        )
+                                    }
+                                })}
+                            </ul>
+                        </li>
+                    ))   
+                    }
                     <li><Link to="/about">About Us</Link></li>
                 </ul>
             </div>

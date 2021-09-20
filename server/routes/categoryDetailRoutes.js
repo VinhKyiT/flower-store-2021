@@ -9,6 +9,6 @@ const router = express.Router();
 
 router.get("/", getAllCategoryDetails);
 router.get("/:id", getCategoryDetailById);
-router.get("/:cateId", getCategoryDetailByCategory);
+router.get("/cate/:cateId", getCategoryDetailByCategory);
 
 export default router;
