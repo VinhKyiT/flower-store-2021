@@ -1,14 +1,29 @@
-import { Icon, Input } from 'semantic-ui-react';
+import "./Header.scss"
 import { Link } from 'react-router-dom';
+import logo from '../../assets/img/logo_vkit_half.png'
+import { FaRegHeart, FaRegUser, FaPhoneAlt } from 'react-icons/fa';
+import { CgShoppingCart } from 'react-icons/cg';
+import axios from "axios";
+import { useEffect } from "react";
 
 function Header() {
+
+    const getAllCategories = async () => {
+        const { data } = await axios.get("/api/category");
+        return data;
+    }
+
+    useEffect(() => {
+        getAllCategories();
+    }, [])
+
     return (
         <header className="header">
             <div className="header__top">
                 <div className="header__top-info">
                     <ul>
                         <li>CÔNG TY TNHH MTV VINHKYIT</li>
-                        <li>SĐT: 037 8383 986</li>
+                        <li>CỬA HÀNG HOA TƯƠI TOÀN QUỐC</li>
                     </ul>
                 </div>
                 <div className="header__top-social">
@@ -20,17 +35,20 @@ function Header() {
                 </div>
             </div>
             <div className="header__container">
-                <div className="header__container-logo">
-                    <img src="http://placehold.it/50x50" alt="vinhkyit" />
+                <div className="header__container-contact">
+                    <div className="phone">
+                        <p><FaPhoneAlt /></p>
+                    </div>
+                    <a href="tel:0378383986">+8437 8383 986</a>
                 </div>
-                <div className="header__container-search">
-                    <Input icon={{ name: 'search', circular: true, link: true }} placeholder='Type anything...' fluid/>
+                <div className="header__container-logo">
+                    <img src={logo} alt="vinhkyit" />
                 </div>
                 <div className="header__container-action">
                     <ul>
-                        <li><Icon name="shopping cart"/></li>
-                        <li><Icon name="heart"/></li>
-                        <li><Icon name="user"/></li>
+                        <li><FaRegUser/></li>
+                        <li><FaRegHeart/></li>
+                        <li><CgShoppingCart /></li>
                     </ul>
                 </div>
             </div>
@@ -39,7 +57,7 @@ function Header() {
                     <li><Link to="/">Trang chủ</Link></li>
                     <li>
                         <Link to="/categories">Hoa sự kiện</Link>
-                        <ul>
+                        <ul className="drop-menu">
                             <li><Link to="/woman">Hoa cưới</Link></li>
                             <li><Link to="/man">Hoa tặng 14-02</Link></li>
                             <li><Link to="/kid">Các dịp lễ</Link></li>
@@ -47,10 +65,10 @@ function Header() {
                             <li><Link to="/kid">Các dịp lễ</Link></li>
                             <li><Link to="/kid">Các dịp lễ</Link></li>
                         </ul>
-                    </li>  
+                    </li>
                     <li>
                         <Link to="/categories">Hoa sự kiện</Link>
-                        <ul>
+                        <ul className="drop-menu">
                             <li><Link to="/woman">Hoa cưới</Link></li>
                             <li><Link to="/man">Hoa tặng 14-02</Link></li>
                             <li><Link to="/kid">Các dịp lễ</Link></li>
@@ -58,7 +76,7 @@ function Header() {
                     </li>
                     <li>
                         <Link to="/categories">Hoa sự kiện</Link>
-                        <ul>
+                        <ul className="drop-menu">
                             <li><Link to="/woman">Hoa cưới</Link></li>
                             <li><Link to="/man">Hoa tặng 14-02</Link></li>
                             <li><Link to="/kid">Các dịp lễ</Link></li>
@@ -66,12 +84,12 @@ function Header() {
                     </li>
                     <li>
                         <Link to="/categories">Hoa sự kiện</Link>
-                        <ul>
+                        <ul className="drop-menu">
                             <li><Link to="/woman">Hoa cưới</Link></li>
                             <li><Link to="/man">Hoa tặng 14-02</Link></li>
                             <li><Link to="/kid">Các dịp lễ</Link></li>
                         </ul>
-                    </li>                   
+                    </li>
                     <li><Link to="/about">About Us</Link></li>
                 </ul>
             </div>
