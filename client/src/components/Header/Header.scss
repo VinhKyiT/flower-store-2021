@@ -83,6 +83,26 @@
         justify-content: space-between;
         li {
           padding: 0 5px;
+          .action-wrapper {
+            position: relative;
+            span {
+              position: absolute;
+              left: 70%;
+              background-color: $primary-color;
+              border-radius: 50%;
+              padding: 2px 2px;
+              width: 17px;
+              height: 17px;
+              font-size: 0.8rem;
+              color: $font-primary;
+              text-align: center;
+              line-height: 15px;
+              top: -30%;
+            }
+          }
+          svg {
+            font-size: 1.3em;
+          }
         }
       }
     }

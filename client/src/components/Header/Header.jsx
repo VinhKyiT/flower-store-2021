@@ -48,51 +48,16 @@ function Header() {
                 </div>
                 <div className="header__container-action">
                     <ul>
-                        <li><FaRegUser/></li>
-                        <li><FaRegHeart/></li>
-                        <li><CgShoppingCart /></li>
+                        <li><div className="action-wrapper"><FaRegUser/></div></li>
+                        <li><div className="action-wrapper"><FaRegHeart/></div></li>
+                        <li><div className="action-wrapper"><CgShoppingCart /><span>5</span></div></li>
                     </ul>
                 </div>
             </div>
             <div className="header__menu">
                 <ul>
                     <li><Link to="/">Trang chủ</Link></li>
-                    {/* <li>
-                        <Link to="/categories">Hoa sự kiện</Link>
-                        <ul className="drop-menu">
-                            <li><Link to="/woman">Hoa cưới</Link></li>
-                            <li><Link to="/man">Hoa tặng 14-02</Link></li>
-                            <li><Link to="/kid">Các dịp lễ</Link></li>
-                            <li><Link to="/kid">Các dịp lễ</Link></li>
-                            <li><Link to="/kid">Các dịp lễ</Link></li>
-                            <li><Link to="/kid">Các dịp lễ</Link></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <Link to="/categories">Hoa sự kiện</Link>
-                        <ul className="drop-menu">
-                            <li><Link to="/woman">Hoa cưới</Link></li>
-                            <li><Link to="/man">Hoa tặng 14-02</Link></li>
-                            <li><Link to="/kid">Các dịp lễ</Link></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <Link to="/categories">Hoa sự kiện</Link>
-                        <ul className="drop-menu">
-                            <li><Link to="/woman">Hoa cưới</Link></li>
-                            <li><Link to="/man">Hoa tặng 14-02</Link></li>
-                            <li><Link to="/kid">Các dịp lễ</Link></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <Link to="/categories">Hoa sự kiện</Link>
-                        <ul className="drop-menu">
-                            <li><Link to="/woman">Hoa cưới</Link></li>
-                            <li><Link to="/man">Hoa tặng 14-02</Link></li>
-                            <li><Link to="/kid">Các dịp lễ</Link></li>
-                        </ul>
-                    </li> */}
-                    {loading ? <div>Loading...</div>
+                    {loading ? ""
                     : error ? <div>{error}</div>
                     : list.map(category => (
                         <li key={category._id}>
@@ -104,6 +69,7 @@ function Header() {
                                             <li key={categoryDetail._id}><Link to={`/category/${category.url}/${categoryDetail.url}`}>{categoryDetail.name}</Link></li>
                                         )
                                     }
+                                    return null;
                                 })}
                             </ul>
                         </li>
