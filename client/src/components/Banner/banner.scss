@@ -1,14 +1,12 @@
 @import "../../assets/scss/variables.scss";
 .banner {
   position: relative;
-  margin: 100px 100px;
   width: 370px;
   height: 300px;
   &__image {
     position: absolute;
     top: 0;
     left: 0;
-    background: url("http://placehold.it/370x300");
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -27,7 +25,6 @@
       margin-top: 20px;
       font-size: 1.8rem;
       font-weight: bold;
-      line-height: 1.8rem;
     }
   }
   &__action {
@@ -55,5 +52,20 @@
         color: $font-primary;
       }
     }
+  }
+}
+.long {
+  width: 770px;
+  .banner__content {
+    text-align: left;
+    top: 40px;
+    left: 25%;
+    .title {
+      margin-top: 30px;
+      font-size: 2rem;
+    }
+  }
+  .banner__action {
+    left: 20%;
   }
 }

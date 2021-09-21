@@ -1,7 +1,6 @@
 import React from "react";
 import "./Slider.scss";
-import leftArrow from "./icons/left-arrow.svg";
-import rightArrow from "./icons/right-arrow.svg";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 export default function BtnSlider({ direction, moveSlide }) {
   return (
@@ -9,7 +8,7 @@ export default function BtnSlider({ direction, moveSlide }) {
       onClick={moveSlide}
       className={direction === "next" ? "btn-slide next" : "btn-slide prev"}
     >
-      <img src={direction === "next" ? rightArrow : leftArrow} alt="" />
+      {direction === "next" ? <FaAngleRight /> : <FaAngleLeft />}
     </button>
   );
 }

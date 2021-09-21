@@ -48,12 +48,15 @@
   }
   &:hover {
     background: $primary-color;
-    color: #fff;
+    svg {
+      color: #fff;
+      border-color: $primary-color;
+    }
   }
 
-  img {
-    width: 25px;
-    height: 25px;
+  svg {
+    font-size: 1.5em;
+    color: #333;
     pointer-events: none;
   }
 }
