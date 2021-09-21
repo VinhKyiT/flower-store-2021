@@ -2,6 +2,7 @@ import "./Home.scss";
 import {FaShippingFast, FaRegCreditCard} from "react-icons/fa";
 import {IoFlowerOutline} from "react-icons/io5";
 import ProductItem from "../../components/ProductItem/ProductItem";
+import Banner from "../../components/Banner/Banner";
 
 function Home() {
     return (
@@ -60,6 +61,9 @@ function Home() {
                     <ProductItem />
                     <ProductItem />
                 </div>
+            </div>
+            <div className="banner-area">
+                <Banner />
             </div>
         </>
     )
