@@ -58,7 +58,7 @@ function Header() {
                 <ul>
                     <li><Link to="/">Trang chủ</Link></li>
                     {loading ? ""
-                    : error ? <div>{error}</div>
+                    : error ? ""
                     : list.map(category => (
                         <li key={category._id}>
                             <Link to={`/category/${category.url}`}>{category.name}</Link>

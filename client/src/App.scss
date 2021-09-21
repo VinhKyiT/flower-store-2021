@@ -45,3 +45,15 @@ img,
 input {
   transition: $baseTransition;
 }
+button,
+.btn {
+  cursor: pointer;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: $font-primary;
+  &:hover {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    color: $font-primary;
+  }
+}
